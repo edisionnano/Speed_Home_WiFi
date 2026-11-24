@@ -37,7 +37,7 @@ ssh -o HostKeyAlgorithms=+ssh-rsa -o MACs=+hmac-sha1 root@192.168.1.99
 ## Explanation
 Since we can interrupt U-Boot the first thing I tried was adding `init=/bin/rc` but the image is configured with `CONFIG_CMDLINE_FORCE` so it had no effect. 
 <br>The next strategy was to dump the image, patch it and boot it from RAM.
-<br>It's pretty easy to dump the very small filesystem using either `md` on UBoot or by dumping the through hole NOR chip using something like a CH431A.
+<br>It's pretty easy to dump the very small filesystem using either `md` on UBoot or by dumping the SPI NOR chip using something like a CH431A.
 <br>Once we do we can extract the image with ease, I have attached my own dump in this repo.
 <br>From `printenv` we see that
 ```
